@@ -1,9 +1,14 @@
+---
+// Frontmatter - server-side code goes here
+const title = "ITC Consultance LLC - AI-Powered Credit Repair & Financial Education | itc24.org";
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITC Consultance LLC - AI-Powered Credit Repair & Financial Education | itc24.org</title>
+    <title>{title}</title>
     <style>
         /* General Styles */
         * {
