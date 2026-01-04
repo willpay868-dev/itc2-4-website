@@ -7,6 +7,9 @@ asyncio>=3.4.3
 requests>=2.31.0
 beautifulsoup4>=4.12.0
 
+# Advanced web automation (optional but recommended)
+playwright>=1.40.0
+
 # Google Sheets integration
 gspread>=5.12.0
 google-auth>=2.23.0
@@ -23,3 +26,6 @@ dataclasses-json>=0.6.0
 
 # Utilities
 tqdm>=4.66.0
+
+# Note: After installing playwright, run:
+# playwright install chromium

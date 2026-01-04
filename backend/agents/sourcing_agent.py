@@ -5,6 +5,14 @@ from typing import Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 
+# Import the advanced web scraper
+try:
+    from .web_scraper_agent import WebScraperAgent
+    WEB_SCRAPER_AVAILABLE = True
+except ImportError:
+    WEB_SCRAPER_AVAILABLE = False
+    print("  Note: Advanced web scraper not available. Install playwright: pip install playwright && playwright install chromium")
+
 
 class LeadSourcingAgent:
     """Gemini-powered agent for lead sourcing from various sources"""
@@ -15,6 +23,10 @@ class LeadSourcingAgent:
         # import google.generativeai as genai
         # genai.configure(api_key=config.get('api_key'))
         # self.model = genai.GenerativeModel(config.get('model', 'gemini-1.5-pro'))
+
+        # Initialize advanced web scraper if available
+        self.web_scraper = WebScraperAgent(config) if WEB_SCRAPER_AVAILABLE else None
+        self.use_advanced_scraper = config.get('use_playwright', True) and WEB_SCRAPER_AVAILABLE
 
     async def scan_sources(self, sources: List[str]) -> List[Dict]:
         """Scan Google Drive, Docs, and web for potential leads"""
@@ -32,7 +44,27 @@ class LeadSourcingAgent:
 
     async def _scan_website(self, url: str) -> List[Dict]:
         """Scan property listing websites"""
-        # Simplified example - in production use Gemini's web scraping capabilities
+        # Use advanced Playwright scraper if available
+        if self.use_advanced_scraper and self.web_scraper:
+            try:
+                print(f"  Using advanced Playwright scraper for {url}")
+                properties = await self.web_scraper.scrape_property_site(url, max_listings=10)
+
+                if properties:
+                    print(f"  Advanced scraper found {len(properties)} properties")
+                    await self.web_scraper.close()
+                    return properties
+                else:
+                    print(f"  Advanced scraper found no properties, falling back to basic scraper")
+                    await self.web_scraper.close()
+            except Exception as e:
+                print(f"  Advanced scraper error: {e}, falling back to basic scraper")
+                try:
+                    await self.web_scraper.close()
+                except:
+                    pass
+
+        # Fallback to basic scraping
         try:
             # Add headers to mimic browser request
             headers = {
