@@ -1,4 +1,4 @@
-# Astro Starter Kit: Blog
+# Astro Starter Kit: Blog + Real Estate AI Agents
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
 
@@ -8,7 +8,7 @@
 
 Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
 
-Features:
+## Website Features
 
 - ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
@@ -17,6 +17,28 @@ Features:
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
 - ✅ Built-in Observability logging
+
+## 🤖 Real Estate AI Agent System
+
+This project includes a powerful multi-agent AI system for real estate lead management in the `backend/` directory.
+
+### AI Agent Features
+
+- **Lead Sourcing** (Gemini): Scan websites and documents for property leads
+- **ROI Analysis** (DeepSeek): Complex financial calculations and risk assessment
+- **Outreach Generation** (Claude): Personalized, empathetic messaging
+- **Knowledge Management**: Queryable lead intelligence database
+- **Google Sheets Integration**: Automatic logging and tracking
+
+See [backend/README.md](backend/README.md) for complete documentation.
+
+### Quick Start (Backend)
+
+```bash
+cd backend
+./setup.sh
+python test_basic.py
+```
 
 <!-- dash-content-end -->
 

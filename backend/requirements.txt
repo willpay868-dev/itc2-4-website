@@ -1,0 +1,25 @@
+# Core dependencies
+python-dotenv>=1.0.0
+httpx>=0.25.0
+asyncio>=3.4.3
+
+# Web scraping
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# Google Sheets integration
+gspread>=5.12.0
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+
+# AI/ML (optional - uncomment when API keys are configured)
+# google-generativeai>=0.3.0  # Gemini
+# anthropic>=0.7.0  # Claude
+# openai>=1.3.0  # For embeddings
+
+# Data processing
+dataclasses-json>=0.6.0
+
+# Utilities
+tqdm>=4.66.0
