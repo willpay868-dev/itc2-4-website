@@ -1,0 +1,31 @@
+{
+  "name": "real-estate-ai-factory",
+  "version": "1.0.0",
+  "description": "Complete Real Estate AI Factory with Pace Morby scoring, financial analysis, and Stripe subscriptions",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "gcloud functions deploy real-estate-ai-factory --gen2 --runtime=nodejs20 --region=us-central1 --source=. --entry-point=handleRequest --trigger-http --allow-unauthenticated --timeout=540s --memory=1GB",
+    "test": "node test-local.js"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^7.1.0",
+    "@google/generative-ai": "^0.1.3",
+    "stripe": "^14.10.0",
+    "express": "^4.18.2",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.2"
+  },
+  "keywords": [
+    "real-estate",
+    "ai",
+    "pace-morby",
+    "financial-analysis",
+    "cloud-functions"
+  ],
+  "author": "Real Estate AI Factory",
+  "license": "MIT"
+}

@@ -18,27 +18,45 @@ Create a blog with Astro and deploy it on Cloudflare Workers as a [static websit
 - ✅ Markdown & MDX support
 - ✅ Built-in Observability logging
 
-## 🤖 Real Estate AI Agent System
+## 🤖 Real Estate AI Systems
 
-This project includes a powerful multi-agent AI system for real estate lead management in the `backend/` directory.
+This project includes TWO powerful AI systems for real estate:
 
-### AI Agent Features
+### 1. Python Multi-Agent System (`backend/`)
 
-- **Lead Sourcing** (Gemini): Scan websites and documents for property leads
-- **ROI Analysis** (DeepSeek): Complex financial calculations and risk assessment
-- **Outreach Generation** (Claude): Personalized, empathetic messaging
-- **Knowledge Management**: Queryable lead intelligence database
-- **Google Sheets Integration**: Automatic logging and tracking
+Multi-agent AI system for real estate lead management:
 
-See [backend/README.md](backend/README.md) for complete documentation.
-
-### Quick Start (Backend)
+- **Lead Sourcing** (Gemini + Playwright): Advanced web scraping
+- **ROI Analysis** (DeepSeek): Complex financial calculations
+- **Outreach Generation** (Claude): Personalized messaging
+- **Knowledge Management**: Queryable lead intelligence
+- **Google Sheets Integration**: Automatic logging
 
 ```bash
 cd backend
 ./setup.sh
 python test_basic.py
 ```
+
+[Full Documentation](backend/README.md)
+
+### 2. Real Estate AI Factory (`cloud-functions/`)
+
+**Production-ready Google Cloud Functions** with:
+
+- 🔥 **Pace Morby Scoring**: Creative finance deal evaluation
+- 💰 **Financial Analysis**: NOI, Cap Rate, ROI calculations
+- 💳 **Stripe Subscriptions**: Monetize your deal flow
+- 🤖 **Gemini AI**: Deep strategy analysis
+- ⏰ **Automated Workflow**: 60-minute daily power play
+- 📊 **Cloud Scheduler**: Auto-scraping every 6 hours
+
+```bash
+cd cloud-functions
+./deploy.sh
+```
+
+[Full Documentation](cloud-functions/README.md) | [Deployment Guide](cloud-functions/DEPLOYMENT_GUIDE.md)
 
 <!-- dash-content-end -->
 
