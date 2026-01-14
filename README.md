@@ -30,6 +30,34 @@ npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-start
 
 A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
 
+## ⚙️ Environment Setup
+
+This project requires several environment variables for its AI agents, integrations, and compliance features.
+
+### Setup Steps
+
+1. Copy the example environment file:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Fill in your actual API keys and credentials in `.env`
+
+### Required Environment Variables
+
+The `.env.example` file contains templates for:
+
+- **AI Models** (Claude, Gemini, DeepSeek) - Powers the specialist agents
+- **LangGraph** - Orchestration and agent workflow management
+- **Cloudflare D1** - Database persistence for agent memory across sessions
+- **Slack Integration** - Bot credentials for Slack workspace integration
+- **SBA 7(a) API** - Government funding API for automated underwriting
+- **Philadelphia Compliance** - Tax validation and compliance logging
+
+See `.env.example` for detailed documentation on each variable.
+
+> **⚠️ Security Note**: Never commit your `.env` file to version control. It's already listed in `.gitignore`.
+
 ## 🚀 Project Structure
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
