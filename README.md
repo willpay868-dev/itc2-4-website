@@ -1,4 +1,4 @@
-# Astro Starter Kit: Blog
+# Astro Starter Kit: Blog + Real Estate AI Agents
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
 
@@ -8,7 +8,7 @@
 
 Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
 
-Features:
+## Website Features
 
 - ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
@@ -17,6 +17,46 @@ Features:
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
 - ✅ Built-in Observability logging
+
+## 🤖 Real Estate AI Systems
+
+This project includes TWO powerful AI systems for real estate:
+
+### 1. Python Multi-Agent System (`backend/`)
+
+Multi-agent AI system for real estate lead management:
+
+- **Lead Sourcing** (Gemini + Playwright): Advanced web scraping
+- **ROI Analysis** (DeepSeek): Complex financial calculations
+- **Outreach Generation** (Claude): Personalized messaging
+- **Knowledge Management**: Queryable lead intelligence
+- **Google Sheets Integration**: Automatic logging
+
+```bash
+cd backend
+./setup.sh
+python test_basic.py
+```
+
+[Full Documentation](backend/README.md)
+
+### 2. Real Estate AI Factory (`cloud-functions/`)
+
+**Production-ready Google Cloud Functions** with:
+
+- 🔥 **Pace Morby Scoring**: Creative finance deal evaluation
+- 💰 **Financial Analysis**: NOI, Cap Rate, ROI calculations
+- 💳 **Stripe Subscriptions**: Monetize your deal flow
+- 🤖 **Gemini AI**: Deep strategy analysis
+- ⏰ **Automated Workflow**: 60-minute daily power play
+- 📊 **Cloud Scheduler**: Auto-scraping every 6 hours
+
+```bash
+cd cloud-functions
+./deploy.sh
+```
+
+[Full Documentation](cloud-functions/README.md) | [Deployment Guide](cloud-functions/DEPLOYMENT_GUIDE.md)
 
 <!-- dash-content-end -->
 

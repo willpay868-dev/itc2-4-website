@@ -1,0 +1,32 @@
+{
+  "gemini": {
+    "api_key": "${GEMINI_API_KEY}",
+    "model": "gemini-1.5-pro",
+    "scraping_enabled": true,
+    "use_playwright": true
+  },
+  "deepseek": {
+    "api_key": "${DEEPSEEK_API_KEY}",
+    "base_url": "${DEEPSEEK_BASE_URL}",
+    "model": "deepseek-chat",
+    "math_precision": "high"
+  },
+  "claude": {
+    "api_key": "${CLAUDE_API_KEY}",
+    "model": "claude-3-5-sonnet-20241022",
+    "temperature": 0.7
+  },
+  "notebooklm": {
+    "project_id": "${NOTEBOOKLM_PROJECT_ID}",
+    "region": "${NOTEBOOKLM_REGION}"
+  },
+  "google_sheet_id": "${GOOGLE_SHEET_ID}",
+  "credentials_path": "${GOOGLE_CREDENTIALS_PATH}",
+  "sources": [
+    "https://www.zillow.com/homes/",
+    "https://www.redfin.com/",
+    "https://www.realtor.com/"
+  ],
+  "batch_size": 10,
+  "rate_limit_delay": 1
+}
